@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-fetch('http://localhost:5000/latest-tweet')
+fetch('/latest-tweet')
     .then(res => res.json())
     .then(tweet => {
         const tweetDiv = document.getElementById('latest-tweet');
@@ -169,7 +169,7 @@ fetch('http://localhost:5000/latest-tweet')
         console.error(err);
     });
 
-fetch('http://localhost:5000/latest-spotify-embed')
+fetch('/latest-spotify-embed')
   .then(res => res.json())
   .then(data => {
     const embedHtml = data.embed_html.replace(
@@ -199,7 +199,7 @@ chatSend.addEventListener('click', () => {
     if (!message) return;
     appendMessage('user', message);
     chatInput.value = '';
-    fetch('http://localhost:5000/virtual-avatar-chat', {
+    fetch('/virtual-avatar-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message })
@@ -226,7 +226,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
     const email = this.querySelector('input[type="email"]').value.trim();
     const message = this.querySelector('textarea').value.trim();
 
-    fetch('http://localhost:5000/send-contact', {
+    fetch('/send-contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message })
