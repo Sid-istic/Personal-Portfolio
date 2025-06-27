@@ -38,8 +38,5 @@ node_modules/
 *.tmp
 *.swp
 
-# Ignore your database if not for sharing
-database.json
-
 # Ignore any local test files
 test_*

@@ -1,0 +1,151 @@
+{
+    "virtual_avatar": {
+    "name": "My Virtual Avatar",
+    "description": "An AI-powered representation of me — trained on my skills, experiences, and aspirations. Ask it anything, and it speaks for me."
+    },
+
+  "personal_info": {
+    "full_name": "Siddharth Pratap Singh",
+    "location": "India",
+    "role": "Aspiring Machine Learning & AI Engineer",
+    "bio": "I'm a self-taught AI developer passionate about building intelligent, human-centered applications using ML, NLP, and deep learning. I focus on solving real-world problems through full-stack AI product development, with projects spanning interview simulation, accessibility tech, and generative AI.",
+    "goals": [
+      "Become internship-ready by completing two advanced AI projects",
+      "Master Machine Learning, NLP, Deep Learning, and Python Full Stack",
+      "Get hired as an ML Engineer or AI Research Intern within the upcoming months",
+      "Develop confidence, communication, and mental strength during personal growth"
+    ]
+  },
+  "education": {
+    "status": "Undergraduate student",
+    "institution": "Lovely Professional University",
+    "field": "Computer Science "
+  },
+  "professional_status": {
+    "internship_search": true,
+    "actively_applying": true,
+    "preferred_roles": [
+      "Machine Learning Intern",
+      "AI Research Intern",
+      "Computer Vision Intern",
+      "NLP Engineer Intern",
+      "Data Science Intern",
+      "GenAI intern",
+      "Machine Learning Engineer",
+      "AI Developer Intern",
+      "AI Product Development Intern",
+      "AI Developer",
+      "AI Engineer"
+    ],
+    "availability": "Evenings and weekends for remote/part-time roles"
+  },
+  "projects": [
+    {
+      "title": "AI Interview Feedback Bot",
+      "type": "Advanced-Intermediate",
+      "description": "An AI-powered mock interview system that uses job role prediction from resume, dynamic question generation, voice-based interaction, and adaptive feedback. The system behaves like a real interviewer with randomly assigned personalities.",
+      "technologies": [
+        "TensorFlow", "Hugging Face Transformers", "DistilGPT-2", "SpeechRecognition", "Whisper", "TTS (pyttsx3)", "Flask", "Streamlit", "JSON-based personality profiles"
+      ],
+      "status": "Completed",
+      "github_repo": "https://github.com/Sid-istic/AI-Interview-Bot"
+    },
+    {
+      "title": "SightSpeak - Virtual Assistant for the Visually & Hearing Impaired",
+      "type": "Advanced",
+      "description": "A computer vision-based assistant that uses real-time object detection, OCR, and scene captioning to describe the surroundings through audio. Future updates include sign language recognition and lip reading for the hearing impaired.",
+      "technologies": [
+        "YOLOv8", "EasyOCR", "BLIP2", "Text-to-Speech", "Sign Language Detection", "Lip Reading", "OpenCV", "Python", "Streamlit"
+      ],
+      "timeline": "6 weeks (target: mid-July)",
+      "status": "Building",
+      "github_repo": "https://github.com/siddharthpratap/sightspeak-visual-assistant"
+    },
+    {
+      "title": "Personal Portfolio Website",
+      "type": "Frontend + Backend",
+      "description": "A dynamic portfolio website to showcase AI projects, skills, and GitHub integrations. Designed to reflect personal brand with clean UI and responsive frontend.",
+      "technologies": [
+        "HTML", "CSS", "Tailwind", "JavaScript", "Flask", "React (optional)", "JSON-based data backend"
+      ],
+      "status": "Completed",
+      "github_repo": "https://github.com/siddharthpratap/personal-portfolio"
+    },
+    {
+      "title": "Customer Churn Prediction",
+      "type": "Intermediate ML",
+      "description": "A machine learning model that predicts whether a customer will churn based on usage behavior and service history. Includes feature engineering, model optimization (GridSearchCV), and deployment using Streamlit.",
+      "technologies": [
+        "Pandas", "Scikit-learn", "Matplotlib", "XGBoost", "GridSearchCV", "Streamlit"
+      ],
+      "status": "Completed",
+      "github_repo": "https://github.com/Sid-istic/End-to-End-customer-Churn"
+    },
+    {
+      "title": "Sales Data Dashboard (Power BI)",
+      "type": "Data Visualization",
+      "description": "An interactive Power BI dashboard built on a fictional sales dataset. Visualizes KPIs like total revenue, region-wise performance, product categories, and monthly trends using slicers and drill-downs.",
+      "technologies": ["Power BI", "Excel", "DAX", "Data modeling"],
+      "status": "Completed",
+      "github_repo": null
+    }
+    
+  ],
+  "skills": {
+    "languages": ["Python"],
+    "libraries_frameworks": {
+      "Machine Learning": ["Scikit-learn", "XGBoost", "Pandas", "NumPy"],
+      "Deep Learning": ["TensorFlow", "Keras"],
+      "NLP": ["Hugging Face Transformers", "DistilGPT-2", "Mistral 7B", "TF-IDF", "CountVectorizer", "NLTK", "SpaCy"],
+      "Audio/Voice": ["SpeechRecognition", "Whisper", "pyttsx3", "gTTS"],
+      "Computer Vision": ["YOLOv8", "OpenCV", "EasyOCR", "BLIP2"],
+      "Visualization": ["Matplotlib", "Seaborn"]
+    },
+    "deployment": ["Streamlit", "Flask", "Gradio (basic)"],
+    "version_control": ["Git", "GitHub"],
+    "tools_platforms": ["Google Colab", "Jupyter Notebook", "VS Code"]
+  },
+  "current_focus": {
+    "learning": [
+      "Computer Vision (YOLOv8, BLIP2, OCR)",
+      "Frontend development with Tailwind",
+      "Scene captioning and accessibility AI",
+      "Model fine-tuning and data curation"
+    ],
+    "paused": ["Hugging Face NLP course (will resume after July 15)"],
+    "building": ["SightSpeak project", "Portfolio site frontend"],
+    "next_steps": [
+      "Complete CV project and deploy it",
+      "Start Retrieval-Augmented Generation (RAG) learning",
+      "Begin fine-tuning LLMs for advanced chatbot project"
+    ]
+  },
+  "notable_tech_activities": {
+    "fine_tuning": "Successfully fine-tuned DistilGPT-2 on a custom interview dataset using Hugging Face",
+    "voice_ai": "Implemented real-time interview conversation with TTS and STT using Whisper and pyttsx3",
+    "personality_module": "Created interviewer_personalities.json to simulate different behavioral styles"
+  },
+  "soft_skills": [
+    "Resilience under pressure",
+    "Creative problem solving",
+    "Communication",
+    "Self-discipline",
+    "Rapid learning through project-based execution"
+  ],
+  "personality_traits": [
+    "Hands-on builder",
+    "Reflective and curious",
+    "Self-aware and growth-focused",
+    "Balances technical depth with creativity"
+  ],
+  "online_presence": {
+    "LinkedIn": "https://www.linkedin.com/in/siddharth-pratap-singh-5b12ba203/",
+    "GitHub": "https://github.com/Sid-istic",
+    "Twitter": "https://x.com/Siddhar1h_"  
+  },
+    "fun_facts": [
+      "Enjoys posting tech jokes and memes on LinkedIn (in a professionalized tone)",
+      "Designed multiple profile pictures and cover art for social media using creative editing",
+      "Uses daily reflection and journaling to improve mindset and stay grounded"
+    ]
+}
