@@ -26,8 +26,29 @@ This site isn’t just a static resume — it’s powered by Flask on the backen
 ---
 
 ## 📁 Folder Structure
-'''
-'''
+```
+
+Personal-Portfolio
+├── images                                               # all the images used in the Site
+  ├── *                                 
+
+├── database.json                                      # CV in a Structured Data Form
+├── app.py                                             # main Flask app
+├── requirements.txt                                   # all the dependencies required for the project
+├── virtual_avatar.py                                  # ELLM for Chatting
+├── twitter_proxy.py                                   # Gets Latest tweets fron X
+├── spotify_embed_proxy.py                             # Embeds the Spotify player into the site
+├── spotify_access_token.py                            # Generates the access Token for Spotify
+├── contact_mailer.py                                  # sends mail on behalf of the visitor
+├── get_user_id.py                                     # gets user id for X
+├── index.html                                         # HTML/TailwindCSS for the Site
+├── script.js                                          # gives functionality to the HTML elements and ports the backend
+├── style.css                                          # HTML styling
+
+       
+
+
+```
 
 
 ---
