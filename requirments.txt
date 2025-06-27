@@ -1,0 +1,6 @@
+flask
+requests
+python-dotenv
+flask_cors
+google-generativeai
+Flask-Mail

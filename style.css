@@ -1,0 +1,126 @@
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #18122B 0%, #2D1E4A 40%, #3A185C 100%), url("images/background.png") center center/cover no-repeat;
+    z-index: -1;
+    opacity: 0.95;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+    }
+}
+
+.floating-gradient {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(126, 34, 206, 0.4) 0%, rgba(217, 70, 239, 0.1) 70%);
+    z-index: -1;
+    animation: floatUp 15s linear infinite;
+    pointer-events: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    opacity: 0.2;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.section-box {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transform-origin: center;
+    transform: scale(1);
+}
+
+.section-box.zooming {
+    transform: scale(0.95);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    border-radius: 0 !important;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.content {
+    opacity: 0.1;
+    max-height: 0;
+    transition: opacity 0.3s ease, max-height 0.5s ease;
+    overflow: hidden;
+}
+
+.section-box:not(.expanded) .content {
+    max-height: 75px;
+    opacity: 0.4;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.section-box.md\:row-span-2:not(.expanded) .content {
+    max-height: 100px;
+    opacity: 0.5;
+}
+
+.expanded .content {
+    opacity: 1;
+    max-height: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 101;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.expanded .close-btn {
+    opacity: 1;
+}

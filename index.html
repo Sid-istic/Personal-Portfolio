@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#301D3E',
+                        secondary: '#3E1F3E',
+                        dark: '#0A1023',
+                        accent: '#1E1628',
+                        deep: '#000911',
+                        darkest: '#05080F'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-200 min-h-screen font-mono">
+    <div class="overlay"></div>
+    <div class="container mx-auto px-4 h-screen">
+        <header class="pt-8 pb-4 text-center relative">
+            <div class="flex flex-col items-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Siddharth Pratap Singh</h1>
+                <p class="text-purple-300 mb-4">
+                    <span>Machine Learning Enthusiast</span>
+                </p>
+            </div>
+        </header>
+        <!-- Music Player Section -->
+
+        <div id="spotify-track" class="flex-1 mb-7 ">
+            <h3 class="font-medium">Last Played</h3>
+            <div id="spotify-song" class="text-sm text-gray-400"></div>
+        </div>
+
+        <div class="grid grid-rows-6 md:grid-rows-4 md:grid-cols-3 gap-4 h-[calc(100vh-8rem)]">
+            <!-- About Section - Top left, 2 rows -->
+            <div class="section-box bg-primary rounded-lg p-6 cursor-pointer md:row-span-2" id="about-section">
+                <button class="close-btn" id="about-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-semibold">ABOUT</h2>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </div>
+                <div class="content mt-4">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-accent mr-4" >
+                                <img src="images/IMG-20250317-WA0054.jpg" class="zoomable w-16 h-16 object-cover rounded-full cursor-pointer transition-transform hover:scale-105" />
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Siddharth Pratap Singh</h3>
+                            <p class="text-sm text-gray-400">AI/ML Enthusiast</p>
+                        </div>
+                    </div>
+                    <p class="text-md leading-relaxed">
+                        Hi, I’m Siddharth Pratap Singh — a driven and curious self-taught developer, passionate about building intelligent systems that make a real impact. I specialize in Machine Learning, Deep Learning, and Full Stack Development, with a strong focus on AI-first applications.
+                        <br>
+                        Currently, I’m working on two flagship projects:<br><br>
+                        🤖 An AI Interview Feedback Bot that simulates real-time interviews with dynamic question generation and spoken feedback.
+                        <br>🦾 A Virtual Assistant for the Visually Impaired combining Computer Vision and Generative AI to describe real-world scenes in real time.<br><br>
+                        With a solid foundation in Python, NLP, Transformers, and deployment pipelines, I enjoy taking ideas from concept to production — building smart, useful, and scalable tools. I’m also actively exploring RAG (Retrieval-Augmented Generation), model fine-tuning, and LLM customization for domain-specific tasks.
+                        When I’m not coding, I’m learning, reflecting, or designing systems to help others succeed. I'm committed to becoming a versatile ML engineer who blends creativity with technical depth — and I’m just getting started.
+                    </p>
+                    <div class="mt-4 flex space-x-2">
+                        <span class="text-xs px-2 py-1 bg-accent rounded">Pyhton</span>
+                        <span class="text-xs px-2 py-1 bg-accent rounded">Machine Learning</span>
+                        <span class="text-xs px-2 py-1 bg-accent rounded">NLP</span>
+                        <span class="text-xs px-2 py-1 bg-accent rounded">Hugging Face</span>
+                    </div>
+                    <a href="images/CV_202506181424574404_12212613.pdf" download class="mt-6 inline-flex items-center px-4 py-2 border border-purple-400 rounded-md text-sm font-medium text-purple-400 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-pink-500/10 transition-all duration-300 group">
+                        <span>Download Resume</span>
+                        <i class="fas fa-download ml-2 group-hover:translate-y-0.5 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projects Section - Top middle, 1 row -->
+            <div class="section-box bg-secondary rounded-lg p-6 cursor-pointer" id="projects-section">
+                <button class="close-btn" id="projects-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-semibold">PROJECTS</h2>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </div>
+                <div class="content mt-4">
+                    <div class="mb-6 group">
+                        <div class="relative overflow-hidden rounded-lg mb-3 h-32 bg-gradient-to-br from-purple-900 to-pink-900 flex items-center justify-center">
+                            <div class="absolute inset-0 "><img src="images/Screenshot 2025-04-21 161120.png" class="w-full h-40 object-cover opacity-20 group-hover:opacity-30 transition-opacity" alt="Neon Dashboard Screenshot"></div>
+                            <h3 class="font-bold text-xl relative z-10">NetFlix Dashboard</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-2">2025 • Data Analysis</p>
+                        <p class="text-sm leading-relaxed mb-3">
+                            A responsive dashboard for NetFlix dataset showcasing real-time analytics.
+                        </p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-accent rounded flex items-center">
+                                <i class="fa fa-table mr-1"></i>  Data Analysis
+                            </span>
+                            <span class="text-xs px-2 py-1 bg-accent rounded flex items-center">
+                                <i class="fas fa-chart-bar mr-1"></i> Power BI
+                            </span>
+                        </div>
+                        <a href="https://github.com/Sid-istic" target="_blank" class="text-gray-400 hover:text-purple-400 ">
+                            <i class="fab fa-github mr-2"> github</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section - Top right, 2 rows -->
+            <div class="section-box bg-dark rounded-lg p-6 cursor-pointer md:row-span-2" onclick="toggleSection(this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-semibold">SKILLS</h2>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </div>
+                <div class="content mt-4">
+                    <div class="mb-4">
+                        <h3 class="font-bold mb-2">💻 Languages</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <i class="fab fa-python text-blue-300"></i>
+                                <div class="flex-1">
+                                    <p class="text-sm">Python</p>
+                                    <div class="w-full bg-accent rounded-full h-1.5">
+                                        <div class="bg-purple-400 h-1.5 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-code text-gray-300"></i>
+                                    <div class="flex-1">
+                                    <p class="text-sm">C++</p>
+                                    <div class="w-full bg-accent rounded-full h-1.5">
+                                        <div class="bg-purple-400 h-1.5 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div>
+                                 <div class="flex items-center space-x-2">
+                                    <i class="fab fa-js-square text-yellow-300"></i>
+                                    <div class="flex-1">
+                                        <p class="text-sm">JavaScript</p>
+                                        <div class="w-full bg-accent rounded-full h-1.5">
+                                            <div class="bg-purple-400 h-1.5 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <h3 class="font-bold mb-2">📚 Libraries & Frameworks</h3>
+                        <div class="space-y-2">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-robot text-grey-300"></i>
+                                    <div class="flex-1">
+                                        <p class="text-sm">Machine Learning</p>
+                                        <div class="w-full bg-accent rounded-full h-1.5">
+                                            <div class="bg-pink-400 h-1.5 rounded-full" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-brain text-pink-200"></i>
+                                    <div class="flex-1">
+                                        <p class="text-sm">Deep Learning</p>
+                                        <div class="w-full bg-accent rounded-full h-1.5">
+                                            <div class="bg-pink-400 h-1.5 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-language text-yellow-300"></i>
+                                    <div class="flex-1">
+                                        <p class="text-sm">Natural Language Processing</p>
+                                        <div class="w-full bg-accent rounded-full h-1.5">
+                                            <div class="bg-pink-400 h-1.5 rounded-full" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-microphone text-brown-300"></i>
+                                    <div class="flex-1">
+                                        <p class="text-sm">Voice & Audio</p>
+                                        <div class="w-full bg-accent rounded-full h-1.5">
+                                            <div class="bg-pink-400 h-1.5 rounded-full" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <h3 class="font-bold mb-2">🧪 Development & Deployment</h3>
+                        <div class="space-y-2">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fab fa-html5 text-orange-400"></i>
+                                    <div class="flex-1">
+                                        <p class="text-sm mb-0">HTML/CSS/TailwindCss</p>
+                                        <div class="w-full bg-accent rounded-full h-1.5 ml-2">
+                                            <div class="bg-blue-400 h-1.5 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fab fa-python text-blue-400"></i>
+                                    <div class = "flex-1">
+                                        <p class="text-sm mb-0">Flask</p>
+                                        <div class="w-full bg-accent rounded-full h-1.5 ml-2">
+                                            <div class="bg-blue-400 h-1.5 rounded-full" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-chart-bar text-green-300"></i>
+                                    <div class="flex-1">
+                                    <p class="text-sm mb-0">Visualization & EDA</p>
+                                    <div class="w-full bg-accent rounded-full h-1.5 ml-2">
+                                        <div class="bg-blue-400 h-1.5 rounded-full" style="width: 90%"></div>
+                                    </div></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fab fa-git-alt text-red-400"></i>
+                                    <div class="flex-1">
+                                    <p class="text-sm mb-0">Git,GitHub</p>
+                                    <div class="w-full bg-accent rounded-full h-1.5 ml-2">
+                                        <div class="bg-blue-400 h-1.5 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <h3 class="font-bold mb-2">⚙️ Tools & Platforms</h3>
+                        <div class="space-y-2">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-book text-white"></i>
+                                    <div class="flex-1">
+                                    <p class="text-sm mb-0">Google Colab / Jupyter Notebooks</p>
+                                    <div class="w-full bg-accent rounded-full h-1.5 ml-2">
+                                        <div class="bg-yellow-400 h-1.5 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-robot text-yellow-400"></i>
+                                    <div class="flex-1">
+                                    <p class="text-sm mb-0">Hugging Face Inference API</p>
+                                    <div class="w-full bg-accent rounded-full h-1.5 ml-2">
+                                        <div class="bg-yellow-400 h-1.5 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-code text-blue-400"></i>
+                                    <div class="flex-1">
+                                    <p class="text-sm mb-0">VS Code</p>
+                                    <div class="w-full bg-accent rounded-full h-1.5 ml-2">
+                                        <div class="bg-yellow-400 h-1.5 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section - Bottom left, 2 rows -->
+            <div class="section-box bg-accent rounded-lg p-6 cursor-pointer md:row-span-2" id="contact-section">
+                <button class="close-btn" id="contact-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-semibold">CONTACT</h2>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </div>
+                <div class="content mt-4">
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm mb-1">Your Name</label>
+                            <input type="text" class="w-full bg-darkest border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-purple-400">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-1">Your Email</label>
+                            <input type="email" class="w-full bg-darkest border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-purple-400">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-1">Message</label>
+                            <textarea class="w-full bg-darkest border border-gray-700 rounded px-3 py-2 text-sm h-24 focus:outline-none focus:border-purple-400"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded text-sm font-medium hover:opacity-90 transition-opacity">
+                            Send Message
+                        </button>
+                    </form>
+                    <div class="mt-6 pt-4 border-t border-gray-700">
+                        <h3 class="font-bold mb-3">Find me elsewhere</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/Sid-istic" target="_blank" class="text-gray-400 hover:text-purple-400 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/siddharth-pratap-singh-5b12ba203/" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://x.com/Siddhar1h_" target="_blank" class="text-gray-400 hover:text-pink-400 transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://discordapp.com/users/1375864535331635374" target="_blank" class="text-gray-400 hover:text-red-400 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Section - Bottom middle, 1 row -->
+            <div class="section-box bg-deep rounded-lg p-6 cursor-pointer" onclick="toggleSection(this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-semibold">Latest Tweets</h2>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </div>
+                <div class="content mt-4">
+                    <div id="latest-tweet" class="mb-4 text-sm text-gray-300 bg-darkest rounded p-3"></div>
+                </div>
+            </div>
+
+            <!-- Virtual Avatar Section - Bottom right, 1 row -->
+            <div class="section-box bg-primary rounded-lg p-6 cursor-pointer" id="avatar-section">
+                <button class="close-btn" id="avatar-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="flex justify-between items-center ">
+                    <h2 class="text-xl font-semibold ">Virtaul Avatar</h2>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </div>
+                <!-- Collapsible content wrapper -->
+                <div class="relative content mt-4 avatar-content-collapsed transition-all duration-300" id="avatar-content">
+                    <div class="p-6">
+                        🤖 An AI-powered representation of me — trained on my skills, experiences, and aspirations. Ask it anything, and it speaks for me. <br>
+                        - Made with Gemini 1.5 Flash <br>
+                        - Has a .json database to get info from <br>
+                        - Answers Questions Regarding my Portfolio
+                    </div>
+                    <div id="virtual-avatar-section" class="section-box bg-primary rounded-lg p-5 mt-6">
+                        <div id="chatbox" class="bg-secondary rounded-lg p-4 overflow-y-auto mb-2" style="height:auto; min-height:25rem; max-height:300px;"></div>
+                        <div class="flex">
+                            <input id="chat-input" type="text" class="flex-1 rounded-l px-3 py-2 bg-dark text-gray-200 focus:outline-none" placeholder="Ask me about my portfolio...">
+                            <button id="chat-send" class="rounded-r bg-purple-500 px-4 text-white font-bold">Send</button>
+                            <button id="chat-clear" class="ml-2 rounded bg-gray-600 px-4 text-white font-bold">Clear Chat</button>
+                        </div>
+                    </div>
+                    <div class="avatar-gradient absolute left-0 bottom-0 w-full h-16 pointer-events-none rounded-b-lg"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="py-4 text-center text-sm text-gray-500">
+            <p>© 2023 Minimal Portfolio. All rights reserved.</p>
+        </footer>
+    </div>
+    <dialog id="zoomDialog" style="padding:0; border:none; background:transparent;">
+    <img id="zoomDialogImg" style="max-width:90vw; max-height:90vh; border-radius:1rem;" />
+    </dialog>
+    
+</body>
+</html>
