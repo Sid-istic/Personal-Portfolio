@@ -143,31 +143,27 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 fetch('/latest-tweet')
-    .then(res => res.json())
-    .then(tweet => {
-        const tweetDiv = document.getElementById('latest-tweet');
-        let tweets = JSON.parse(localStorage.getItem('tweets') || '[]');
-        if (tweet && tweet.text) {
-            // Add new tweet to the top if it's not already present
-            if (!tweets.find(t => t.text === tweet.text)) {
-                tweets.unshift({ text: tweet.text });
-                // Keep only the latest 10 tweets (optional)
-                tweets = tweets.slice(0, 10);
-                localStorage.setItem('tweets', JSON.stringify(tweets));
-            }
-            tweetDiv.innerHTML =
-                `<span class="block mb-1"><i class="fab fa-twitter text-blue-400"></i> Latest Tweets:</span>
-                 <ul class="space-y-2">
-                    ${tweets.map(t => `<li class="border-b border-gray-700 pb-2">${t.text}</li>`).join('')}
-                 </ul>`;
-        } else {
-            tweetDiv.textContent = tweet.error || 'No tweet found.';
-        }
-    })
-    .catch((err) => {
-        document.getElementById('latest-tweet').textContent = 'Could not load tweet.';
-        console.error(err);
+  .then(res => res.json())
+  .then(tweets => {
+    const tweetsContainer = document.getElementById('tweets-container');
+    tweetsContainer.innerHTML = '';
+    tweets.reverse().forEach(tweet => { // Reverse so latest is first
+      const div = document.createElement('div');
+      div.className = 'tweet';
+      // Convert URLs in tweet text to clickable links
+      const linkedText = tweet.text.replace(
+        /(https?:\/\/[^\s]+)/g,
+        url => `<a href="${url}" target="_blank" style="color:#8b5cf6; text-decoration:underline;">${url}</a>`
+      );
+      div.innerHTML = linkedText;
+      div.style.margin = '25px 0';
+      tweetsContainer.appendChild(div);
+      tweetsContainer.appendChild(document.createElement('hr'));
     });
+  })
+  .catch(err => {
+    console.error('Error fetching tweets:', err);
+  });
 
 fetch('/latest-spotify-embed')
   .then(res => res.json())
