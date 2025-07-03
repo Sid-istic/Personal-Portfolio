@@ -147,7 +147,7 @@ fetch('/latest-tweet')
   .then(tweets => {
     const tweetsContainer = document.getElementById('tweets-container');
     tweetsContainer.innerHTML = '';
-    tweets.reverse().forEach(tweet => { // Reverse so latest is first
+    tweets.forEach(tweet => { // Reverse so latest is first
       const div = document.createElement('div');
       div.className = 'tweet';
       // Convert URLs in tweet text to clickable links
